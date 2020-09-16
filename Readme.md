@@ -10,3 +10,4 @@ I took all the course descriptions from 5 universities Bachelor's of Science in 
 
 2. Run `node map.js` in the root directory. It currently appends to the output file, so you'll have to delete its contents every time. 
 
+Visit (https://sprintup.github.io/CS-Courses-Keywords/)[https://sprintup.github.io/CS-Courses-Keywords/] to an html version of the output.txt file, which lists the number of occurances of each word. 
