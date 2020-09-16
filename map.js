@@ -1,4 +1,5 @@
 const alphabetHash = require('./alphabetHash.js');
+const html = require('./html.js');
 const fs = require('fs');
 
 function getMapInput(fileName) {
@@ -10,7 +11,8 @@ function getMapInput(fileName) {
 function map(text) {
     const words = text.split(' ');// TODO: SPLIT ON SPACE? 
     let count = 0;
-    let pattern = /\s/g;
+    let letters = /^[A-Za-z]+$/
+    let pattern = /\n\r\s\t/g;
     for (const word of words) {
         //word.replace('\r', "");
         word.replace(pattern,'');
@@ -56,10 +58,16 @@ function swap(i, j, array) {
 }
 
 function writeHelper(orderedArray) {
+    console.log("words", orderedArray)
+    fs.appendFileSync('index.html', html.htmlTop());
     for (let i = orderedArray.length - 1; i > 0; i--) {
-        let fileLine = orderedArray[i].wordCount + "   ||   " + orderedArray[i].word;
-        fs.appendFileSync('output.txt', fileLine + '\n');
+        let word = orderedArray[i].word;
+        let count = orderedArray[i].wordCount;
+        let fileLine = word + "   ||   " + word;
+        //fs.appendFileSync('output.txt', fileLine + '\n');
+        fs.appendFileSync('index.html', html.span(word, count));
     }
+    fs.appendFileSync('index.html', html.htmlBottom());
 }
 
 function hashHelper(word, hash) {

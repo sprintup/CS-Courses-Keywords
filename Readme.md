@@ -9,3 +9,4 @@ I took all the course descriptions from 5 universities Bachelor's of Science in 
 1. Fill a txt file with whatever text you want
 
 2. Run `node map.js` in the root directory. It currently appends to the output file, so you'll have to delete its contents every time. 
+
