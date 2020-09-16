@@ -25,7 +25,7 @@ function bottom() {
 }       
 
 function span(val, count) {
-    if(!val) val = "x";
+    if(!val) val = "_";
     return `
     <span id="`+val+`">
         <span class="badge badge-secondary m-2">`+count+`</span>`+`

@@ -10,16 +10,23 @@ function getMapInput(fileName) {
 
 function map(text) {
     const words = text.split(' ');// TODO: SPLIT ON SPACE? 
-    let count = 0;
-    let letters = /^[A-Za-z]+$/
-    let pattern = /\n\r\s\t/g;
     for (const word of words) {
-        //word.replace('\r', "");
-        //word.replace(pattern,'');
-        let lowercaseWord = word.toLowerCase();
-        word.toLowerCase()
-        hashHelper(word, alphabetHash.hash);
+        var cleanWord = charHelper(word);
+        hashHelper(cleanWord);
     }
+}
+
+function charHelper(word) {
+    var output = "";
+    for (var i = 0; i < word.length; i++) {
+        var charCode = word.charCodeAt(i)
+        if(charCode <= 122 && charCode >= 65) {
+            output += word.charAt(i);
+        }
+    }
+
+    output.toLowerCase()
+    return output;
 }
 
 function orderArray() {
@@ -58,7 +65,7 @@ function swap(i, j, array) {
 }
 
 function writeHelper(orderedArray) {
-    console.log("words", orderedArray)
+    //console.log("words", orderedArray)
     fs.appendFileSync('index.html', html.htmlTop());
     for (let i = orderedArray.length - 1; i > 0; i--) {
         let word = orderedArray[i].word;
@@ -70,7 +77,7 @@ function writeHelper(orderedArray) {
     fs.appendFileSync('index.html', html.htmlBottom());
 }
 
-function hashHelper(word, hash) {
+function hashHelper(word, hash = alphabetHash.hash) {
     if(word in hash) {
         hash[word].wordCount++
         return hash[word];
