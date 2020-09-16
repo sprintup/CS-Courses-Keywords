@@ -14,6 +14,7 @@ function top() {
                 <div id="spinner" class="spinner-border" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
+                <a id="github" href="https://www.github.com/sprintup/CS-Courses-Keywords">Github</a>
     `
 }
 
