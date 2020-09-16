@@ -10,8 +10,10 @@ function getMapInput(fileName) {
 function map(text) {
     const words = text.split(' ');// TODO: SPLIT ON SPACE? 
     let count = 0;
+    let pattern = /\s/g;
     for (const word of words) {
         //word.replace('\r', "");
+        word.replace(pattern,'');
         let lowercaseWord = word.toLowerCase();
         word.toLowerCase()
         hashHelper(word, alphabetHash.hash);
