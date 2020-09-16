@@ -2,7 +2,7 @@
 
 I took all the course descriptions from 5 universities Bachelor's of Science in Computer Science and put the words in text files. (University of Colorado - Denver, MIT, Stanford, Carnegie Mellon, Berkeley). Then I counted and sorted them.
 
-** This project orders the number of occurances for each word. **
+**This project orders the number of occurances for each word.**
 
 #### Instructions
 
