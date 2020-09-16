@@ -15,7 +15,7 @@ function map(text) {
     let pattern = /\n\r\s\t/g;
     for (const word of words) {
         //word.replace('\r', "");
-        word.replace(pattern,'');
+        //word.replace(pattern,'');
         let lowercaseWord = word.toLowerCase();
         word.toLowerCase()
         hashHelper(word, alphabetHash.hash);

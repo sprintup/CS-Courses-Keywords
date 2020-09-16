@@ -11,6 +11,9 @@ function top() {
                     <link rel="stylesheet" type="text/css" href="style.css">
                 </head>
                 <body>
+                <div id="spinner" class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
     `
 }
 
@@ -22,17 +25,15 @@ function bottom() {
 }       
 
 function span(val, count) {
+    if(!val) val = "x";
     return `
     <span id="`+val+`">
         <span class="badge badge-secondary m-2">`+count+`</span>`+`
-        <a href=http://www.google.com/search?q="`+val+`" target="_blank">`+val+`</a>
-        <button class="badge badge-pill badge-danger m-2" onclick()="deleteNode(`+val+`)">X</button>
+        <a href='http://www.google.com/search?q=`+val+`' target="_blank">`+val+`</a>
+        <button class="badge badge-pill badge-danger m-2" onclick="deleteNode('`+val+`')">X</button>
     </span>`
 }
 
-function spanEnd() {
-    return 
-}
 
 module.exports.htmlTop = top;
 module.exports.htmlBottom = bottom;
