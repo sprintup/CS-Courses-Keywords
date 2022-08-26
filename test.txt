@@ -1,1 +1,3 @@
 how many times does times come up in this document? Any? how about now?
+a test stopword is ourselves or yourselves
+does the really not work? 
